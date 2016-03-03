@@ -73,7 +73,7 @@ public class App
     }
     
     public static void addToSeries() throws NonRetryableAPIException, RetryableAPIException{
-    	Series.createSeries("New Hire 3");
+    	Series.createSeries("New Hire");
     	sleepForSec();
     	LearnerAddResponse learnerAddResponse = Series.addLearnerToSeriesByName("New Hire", getLearnerAddRequest());
     	try {
@@ -84,7 +84,7 @@ public class App
     }
     
     public static void addToGroup() throws NonRetryableAPIException, RetryableAPIException{
-    	Group.createGroup("Asia Pacific 3");
+    	Group.createGroup("Asia Pacific");
     	sleepForSec();
     	LearnerAddResponse learnerAddResponse = Group.addLearnerToGroupByName("Asia Pacific", getLearnerAddRequest());
     	try {
