@@ -4,7 +4,7 @@
 
 	<groupId>com.mindtickle.openapi</groupId>
 	<artifactId>mt-openapi-example</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.2.0</version>
 	<packaging>jar</packaging>
 
 	<name>mt-openapi-example</name>
@@ -28,7 +28,7 @@
 		<dependency>
 			<groupId>com.mindtickle.openapi</groupId>
 			<artifactId>mt-openapi-sdk</artifactId>
-			<version>0.1.1</version>
+			<version>0.2.0-RC-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -46,6 +46,16 @@
 			<url>http://repo1.maven.org/maven2</url>
 			<snapshots>
 				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>archiva.snapshot</id>
+			<name>Archiva Snapshot</name>
+			<layout>default</layout>
+			<url>http://services.ops.mindtickle.com/archiva/repository/snapshots</url>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
 			</snapshots>
 		</repository>
 		<repository>

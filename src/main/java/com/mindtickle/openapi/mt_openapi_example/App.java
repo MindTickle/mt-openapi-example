@@ -15,6 +15,7 @@ import com.mindtickle.openapi.objects.request.LearnerAddRequest;
 import com.mindtickle.openapi.objects.request.SingleLearnerDetails;
 import com.mindtickle.openapi.objects.response.CompanyProfileResponse;
 import com.mindtickle.openapi.objects.response.LearnerAddResponse;
+import com.mindtickle.openapi.objects.response.LearnerIdentifierType;
 import com.mindtickle.openapi.utils.NonRetryableAPIException;
 import com.mindtickle.openapi.utils.RetryableAPIException;
 
@@ -42,10 +43,11 @@ public class App
     
     public static LearnerAddRequest getLearnerAddRequest(){
     	LearnerAddRequest learnerAddRequest = new LearnerAddRequest();
+    	learnerAddRequest.setIdentifierType(LearnerIdentifierType.EMAIL);
     	List<SingleLearnerDetails> learners = new ArrayList<SingleLearnerDetails>();
     	for (int i = 0; i < EMAILS_PER_REQUEST; i++) {
     		SingleLearnerDetails singleLearnerDetails = new SingleLearnerDetails();
-    		singleLearnerDetails.setEmail("mylearner" + i + "@mailinator.com");
+    		singleLearnerDetails.setIdentifier("myblearner" + i + "@mailinator.com");
     		Map<String, String> profiles = new HashMap<String, String>();
     		profiles.put("rg", "India");
     		singleLearnerDetails.setProfile(profiles);
