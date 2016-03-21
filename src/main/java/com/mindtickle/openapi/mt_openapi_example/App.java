@@ -49,7 +49,8 @@ public class App
     		SingleLearnerDetails singleLearnerDetails = new SingleLearnerDetails();
     		singleLearnerDetails.setIdentifier("myblearner" + i + "@mailinator.com");
     		Map<String, String> profiles = new HashMap<String, String>();
-    		profiles.put("rg", "India");
+    		profiles.put("rg", "India"); // Location
+    		profiles.put("dg", "Software Engineer"); // Designation
     		singleLearnerDetails.setProfile(profiles);
     		learners.add(singleLearnerDetails);
 		}
