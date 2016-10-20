@@ -7,15 +7,18 @@ import java.util.Map;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mindtickle.openapi.Analytics;
 import com.mindtickle.openapi.Company;
 import com.mindtickle.openapi.Group;
 import com.mindtickle.openapi.Platform;
 import com.mindtickle.openapi.Series;
 import com.mindtickle.openapi.objects.request.LearnerAddRequest;
+import com.mindtickle.openapi.objects.request.LearnerModulesRequest;
 import com.mindtickle.openapi.objects.request.SingleLearnerDetails;
 import com.mindtickle.openapi.objects.response.CompanyProfileResponse;
 import com.mindtickle.openapi.objects.response.LearnerAddResponse;
 import com.mindtickle.openapi.objects.response.LearnerIdentifierType;
+import com.mindtickle.openapi.objects.response.LearnerModulesResponse;
 import com.mindtickle.openapi.utils.NonRetryableAPIException;
 import com.mindtickle.openapi.utils.RetryableAPIException;
 
@@ -34,6 +37,8 @@ public class App
 			App.addToGroup();
 			sleepForSec();
 			App.addToSeries();
+			sleepForSec();
+			App.getLearnerModules();
 		} catch (NonRetryableAPIException e) {
 			e.printStackTrace();
 		} catch (RetryableAPIException e) {
@@ -105,4 +110,18 @@ public class App
 			e.printStackTrace();
 		}
     }
+
+	public static void getLearnerModules() throws NonRetryableAPIException,
+			RetryableAPIException {
+
+		LearnerModulesRequest learnerModulesRequest = new LearnerModulesRequest();
+		learnerModulesRequest.setIdentifierType(LearnerIdentifierType.EMAIL);
+		learnerModulesRequest.setIdentifier("myblearner1@mailinator.com");
+		LearnerModulesResponse learnerModulesResponse = Analytics.getLearnerModules(learnerModulesRequest);
+		try {
+			System.out.println("getLearnerModules response : " + mapper.writeValueAsString(learnerModulesResponse));
+		} catch (JsonProcessingException e) {
+			e.printStackTrace();
+		}
+	}
 }

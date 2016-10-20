@@ -28,7 +28,7 @@
 		<dependency>
 			<groupId>com.mindtickle.openapi</groupId>
 			<artifactId>mt-openapi-sdk</artifactId>
-			<version>0.2.0-RC-SNAPSHOT</version>
+			<version>0.2.12</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
