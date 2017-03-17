@@ -22,7 +22,7 @@ import com.mindtickle.openapi.objects.response.LearnerModulesResponse;
 import com.mindtickle.openapi.utils.NonRetryableAPIException;
 import com.mindtickle.openapi.utils.RetryableAPIException;
 
-public class App 
+public class MT_Test 
 {
 	public static int EMAILS_PER_REQUEST = 10;
 	public static ObjectMapper mapper = new ObjectMapper();
@@ -30,15 +30,15 @@ public class App
     public static void main( String[] args )
     {
     	try {
-			App.getProfiles();
+			MT_Test.getProfiles();
 			sleepForSec();
-			App.addToPlatform();
+			MT_Test.addToPlatform();
 			sleepForSec();
-			App.addToGroup();
+			MT_Test.addToGroup();
 			sleepForSec();
-			App.addToSeries();
+			MT_Test.addToSeries();
 			sleepForSec();
-			App.getLearnerModules();
+			MT_Test.getLearnerModules();
 		} catch (NonRetryableAPIException e) {
 			e.printStackTrace();
 		} catch (RetryableAPIException e) {

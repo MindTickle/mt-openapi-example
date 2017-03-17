@@ -4,7 +4,7 @@
 
 	<groupId>com.mindtickle.openapi</groupId>
 	<artifactId>mt-openapi-example</artifactId>
-	<version>0.2.0</version>
+	<version>0.2.15</version>
 	<packaging>jar</packaging>
 
 	<name>mt-openapi-example</name>
@@ -65,5 +65,19 @@
 			<url>http://services.ops.mindtickle.com/archiva/repository/internal</url>
 		</repository>
 	</repositories>
-
+<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.1</version>
+					<configuration>
+                       <source>1.8</source>
+                       <target>1.8</target>
+                   </configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
 </project>
