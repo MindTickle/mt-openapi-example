@@ -3,4 +3,5 @@
 .project
 log4j.log
 target
+.idea
 
